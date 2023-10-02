@@ -1,0 +1,34 @@
+﻿@model List<Labwork3.Models.Domain.Employee>
+@{
+}
+<h1>Робітники</h1>
+
+
+<table class="table"> 
+<thead> 
+        <tr>
+            <th> Id</th>
+            <th> Ім'я</th>
+            <th> Email </th>
+            <th> Зарплата</th>
+            <th> Дата народження</th>
+            <th> Спеціалізація</th>
+        </tr>
+</thead>
+     <tbody>
+         @foreach(var employee in Model)
+        {
+            <tr>    
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+                <td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td>@employee.Department</td>
+                <td><a href="Employees/View/@employee.Id">Перегляд</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
